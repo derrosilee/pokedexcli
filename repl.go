@@ -4,12 +4,23 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func startRepl() {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Print(" > ")
-	scanner.Scan()
-	text := scanner.Text()
-	fmt.Println("echoing: ", text)
+
+	for {
+		fmt.Print(" > ")
+		scanner.Scan()
+		text := scanner.Text()
+		fmt.Println("echoing: ", text)
+	}
+
+}
+
+func cleanInput(str string) []string {
+	lowered := strings.ToLower(str)
+	words := strings.Fields(lowered)
+	return words
 }
