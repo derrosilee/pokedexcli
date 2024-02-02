@@ -46,14 +46,14 @@ type cliCommands struct {
 func getCommands() map[string]cliCommands {
 	return map[string]cliCommands{
 		"help": {
-			name: "help",
+			name:        "help",
 			description: "Prints the help menu",
-			callback: ,
+			callback:    callbackHelp,
 		},
 		"exit": {
-			name: "exit",
+			name:        "exit",
 			description: "Turns of the Pokedex",
-			callback: ,
+			callback:    callbackExit,
 		},
 	}
 }
